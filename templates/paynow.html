@@ -20,39 +20,17 @@
         
         <script src="https://cdn.jsdelivr.net/npm/web3@1.5.2/dist/web3.min.js"></script>
         <script>
-            const contractAddress = "";
+            const contractAddress = "0x96b366d7572c671869726300c9a4289b36beda49";
             const contractABI = [
+                        [
                 {
                     "inputs": [],
                     "stateMutability": "nonpayable",
                     "type": "constructor"
                 },
                 {
-                    "inputs": [
-                        {
-                            "internalType": "uint256",
-                            "name": "amount_to_transfer",
-                            "type": "uint256"
-                        },
-                        {
-                            "internalType": "address",
-                            "name": "payer_add",
-                            "type": "address"
-                        },
-                        {
-                            "internalType": "address",
-                            "name": "payee_add",
-                            "type": "address"
-                        }
-                    ],
-                    "name": "weixin",
-                    "outputs": [],
-                    "stateMutability": "nonpayable",
-                    "type": "function"
-                },
-                {
                     "inputs": [],
-                    "name": "check_transaction",
+                    "name": "transaction",
                     "outputs": [
                         {
                             "internalType": "address",
@@ -72,7 +50,31 @@
                     ],
                     "stateMutability": "view",
                     "type": "function"
+                },
+                {
+                    "inputs": [
+                        {
+                            "internalType": "address",
+                            "name": "payer_add",
+                            "type": "address"
+                        },
+                        {
+                            "internalType": "address",
+                            "name": "payee_add",
+                            "type": "address"
+                        },
+                        {
+                            "internalType": "uint256",
+                            "name": "pay_amount",
+                            "type": "uint256"
+                        }
+                    ],
+                    "name": "weixin",
+                    "outputs": [],
+                    "stateMutability": "nonpayable",
+                    "type": "function"
                 }
+            ]
             ];
                  
             const web3 = new Web3(Web3.givenProvider);
